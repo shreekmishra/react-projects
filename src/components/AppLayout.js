@@ -10,8 +10,8 @@ function AppLayout() {
       <header className="sticky-top">
         <AppHeader />
       </header>
-      <main className="py-2 d-flex align-items-stretch">
-        <div className="w-100 h-100">
+      <main className="d-flex align-items-stretch">
+        <div className="w-100">
           <Outlet />
         </div>
       </main>
