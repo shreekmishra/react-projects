@@ -3,7 +3,6 @@ import { Outlet } from "react-router-dom";
 import AppFooter from "./AppFooter";
 import AppHeader from "./AppHeader";
 import { AppRoot } from "./styled-components/AppLayout.styled";
-import { Container } from "react-bootstrap";
 
 function AppLayout() {
   return (
@@ -11,10 +10,10 @@ function AppLayout() {
       <header className="sticky-top">
         <AppHeader />
       </header>
-      <main className="py-2 d-flex align-item-streach">
-        <Container fluid="md">
+      <main className="py-2 d-flex align-items-stretch">
+        <div className="w-100 h-100">
           <Outlet />
-        </Container>
+        </div>
       </main>
       <footer>
         <AppFooter />

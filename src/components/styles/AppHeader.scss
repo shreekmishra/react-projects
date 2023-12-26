@@ -3,7 +3,7 @@
     .nav-link {
       &.active, &:hover {
         font-weight: 600;
-        color: #fff;
+        color: var(--bs-emphasis-color);
 
         &::after {
           width: 100%;

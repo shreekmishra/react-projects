@@ -5,13 +5,13 @@ import { Theme } from "../../constants/Constants";
 
 
 function ThemeSwitcher() {
-  const {theme, toggleTheme} = useTheme();
+  const {selectedTheme, toggleTheme} = useTheme();
   const switchTheme = (theme, event) => {
     toggleTheme(theme);
   }
 
-  const getThemeSwitcherTitle = (selectedTheme) => {
-    switch (selectedTheme) {
+  const getThemeIcon = (theme) => {
+    switch (theme) {
         case Theme.DARK:
             return <i className="bi bi-moon-stars-fill"/>;
         case Theme.LIGHT:
@@ -24,15 +24,15 @@ function ThemeSwitcher() {
   
   return (
     <>
-      <NavDropdown title={getThemeSwitcherTitle(theme)} className="d-none d-md-block">
-        <NavDropdown.Item as={Button} active={theme === Theme.LIGHT} onClick={switchTheme.bind(null, Theme.LIGHT)}><i className="bi bi-sun-fill"/>  Light</NavDropdown.Item>
-        <NavDropdown.Item as={Button} active={theme === Theme.DARK} onClick={switchTheme.bind(null, Theme.DARK)}><i className="bi bi-moon-stars-fill"/> Dark </NavDropdown.Item>
-        <NavDropdown.Item as={Button} active={theme === Theme.AUTO} onClick={switchTheme.bind(null, Theme.AUTO)}><i className="bi bi-circle-half"/> Auto</NavDropdown.Item>
+      <NavDropdown title={getThemeIcon(selectedTheme)} className="d-none d-md-block">
+        {Object.keys(Theme).map(key =>
+          <NavDropdown.Item key={key} as={Button} active={selectedTheme === Theme[key]} onClick={switchTheme.bind(null, Theme[key])}>{getThemeIcon(Theme[key])} {Theme[key].capitalize()}</NavDropdown.Item>  
+          )}
       </NavDropdown>
       <ButtonGroup size="sm" className="mt-1 d-md-none">
-        <Button variant="outline-secondary" active={theme === Theme.LIGHT} onClick={switchTheme.bind(null, Theme.LIGHT)}><i className="bi bi-sun-fill"/></Button>
-        <Button variant="outline-secondary" active={theme === Theme.DARK} onClick={switchTheme.bind(null, Theme.DARK)}><i className="bi bi-moon-stars-fill"/></Button>
-        <Button variant="outline-secondary" active={theme === Theme.AUTO} onClick={switchTheme.bind(null, Theme.AUTO)}><i className="bi bi-circle-half"/></Button>
+      {Object.keys(Theme).map(key =>
+          <Button key={key} variant="outline-secondary" active={selectedTheme === Theme[key]} onClick={switchTheme.bind(null, Theme[key])}>{getThemeIcon(Theme[key])}</Button>
+          )}
       </ButtonGroup>
     </>
   );
