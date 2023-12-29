@@ -1,0 +1,20 @@
+{
+  "title": "React Projects",
+  "description": "Welcome to our ReactJS Demo Hub! Our website is a showcase of diverse demo projects meticulously crafted in ReactJS, offering a hands-on experience for developers and enthusiasts alike.",
+  "features": [
+    {
+      "title": "Build with ReactJs",
+      "paragraps": [
+        "Explore our collection of captivating projects, each highlighting the versatility and capabilities of ReactJS.",
+        "With every project, find a convenient Github link, granting you access to the codebase for deeper exploration and learning."
+      ]
+    },
+    {
+      "title": "Have an idea",
+      "paragraps": [
+        "We value your creativity! Have an idea for a new project? Our platform encourages collaboration and welcomes your input.",
+        "Use our dedicated section to submit your project ideas, and our skilled developers will bring your vision to life, contributing to our growing repository of dynamic demos."
+      ]
+    }
+  ]
+}

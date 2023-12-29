@@ -13,7 +13,9 @@ function App() {
       <Routes>
         <Route path='/' Component={AppLayout}>
           <Route index Component={Home} />
-          <Route path='projects' Component={Projects} />
+          <Route path='projects' >
+            <Route index Component={Projects} />
+          </Route>
           <Route path='contact' Component={Contact} />
           <Route path='*' Component={PageNotFound} />
         </Route>
